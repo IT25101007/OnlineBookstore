@@ -1,0 +1,7 @@
+BK1732896100001 | The Great Gatsby | F. Scott Fitzgerald | Fiction | 12.99 | 25 | PRINTED
+BK1732896100002 | Java Programming | James Gosling | Programming | 49.99 | 47 | PRINTED
+BK1732896100003 | Clean Code | Robert Martin | Programming | 39.99 | 13 | EBOOK
+BK1732896100004 | A Brief History of Time | Stephen Hawking | Science | 18.99 | 7 | PRINTED
+BK1732896100005 | The Art of War | Sun Tzu | History | 9.99 | 30 | EBOOK
+BK1732896100006 | Introduction to Algorithms | Thomas Cormen | Programming | 89.99 | 8 | PRINTED
+BK1732896100007 | Dune | Frank Herbert | Fiction | 15.99 | 20 | PRINTED

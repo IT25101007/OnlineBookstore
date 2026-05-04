@@ -1,0 +1,3 @@
+ADM1732896500001 | Super Admin | super@bookstore.com | super123 | SUPER_ADMIN
+ADM1732896500002 | Report Admin | report@bookstore.com | report123 | REPORT_ADMIN
+ADM1732896500003 | Regular Admin | regular@bookstore.com | regular123 | REGULAR

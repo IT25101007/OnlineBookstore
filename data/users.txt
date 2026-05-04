@@ -1,0 +1,8 @@
+USR1732896000001 | John Smith | john@example.com | password123 | 555-0101 | CUSTOMER
+USR1732896000002 | Jane Doe | jane@example.com | pass456 | 555-0102 | CUSTOMER
+USR1732896000003 | Bob Johnson | bob@example.com | bobpass | 555-0103 | CUSTOMER
+USR1732896000004 | Shashith | admin@bookstore.com | admin123 | 555-0104 | ADMIN
+USR1732896000005 | Sarah Wilson | sarah@example.com | sarah123 | 555-0105 | CUSTOMER
+USR1777724274565 | vihangi ranaviraja | vihangiranaviraja@gmail.com | 123456 | 0703106805 | CUSTOMER
+USR1777858993281 | Tester 1 | tester1@gmail.com | 123456 | 555-0104 | CUSTOMER
+USR1777859180477 | Shashith Amukotuwa | shashith0510@gmail.com | 123456 | 555-0104 | ADMIN

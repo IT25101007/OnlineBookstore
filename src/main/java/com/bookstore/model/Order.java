@@ -1,7 +1,6 @@
 package com.bookstore.model;
 
 public class Order {
-    // Encapsulated fields
     private String orderID;
     private String userID;
     private String bookID;
@@ -101,4 +100,5 @@ public class Order {
                 ", status='" + status + '\'' +
                 '}';
     }
+
 }

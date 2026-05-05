@@ -49,4 +49,8 @@ public class Cart {
         this.quantity = quantity;
     }
 
+    public String toFileString() {
+        return cartID + " | " + userID + " | " + bookID + " | " + quantity;
+    }
+
 }

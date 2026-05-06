@@ -81,5 +81,4 @@ public abstract class Book {
     public void setType(String type) {
         this.type = type;
     }
-
 }

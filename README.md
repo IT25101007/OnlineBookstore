@@ -10,7 +10,7 @@ A comprehensive web-based **Online Bookstore Management System** built with Java
 | Member 1 | User Management (Component 01) | Registration, Login, Profile Management, User List (Admin) |
 | Member 2 | Book Management (Component 02) | Browse, Search, Add/Edit/Delete Books |
 | Member 3 | Order Management (Component 03) | Place Orders, Order History, Status Updates |
-| Member 4 | Shopping Cart (Component 04) | Add to Cart, Update Quantity, Remove Items |
+| Member 4 | Book Inventory (Component 04) | Add to Inventory, Update Quantity, Remove Items |
 | Member 5 | Payment & Billing (Component 05) | Credit Card/PayPal Payments, Invoice Generation |
 | Member 6 | Admin & Reports (Component 06) | Dashboard, System Reports, Admin Management |
 

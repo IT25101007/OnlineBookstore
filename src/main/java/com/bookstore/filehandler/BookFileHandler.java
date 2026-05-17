@@ -117,7 +117,4 @@ public class BookFileHandler {
         return false;
     }
 
-    public static boolean updateStock(String bookID, int newStock, String filePath) {
-        return BookInventoryFileHandler.setStock(bookID, newStock, filePath);
-    }
 }

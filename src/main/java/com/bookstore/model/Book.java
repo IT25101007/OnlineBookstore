@@ -105,6 +105,16 @@ public abstract class Book {
         }
         return null;
     }
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookID='" + bookID + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", type='" + type + '\'' +
+                '}';
+    }
 
 }

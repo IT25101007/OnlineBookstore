@@ -21,4 +21,20 @@ public class PrintedBook extends Book {
         this.pageCount = pageCount;
     }
 
+    // Polymorphism - implementing abstract method
+    @Override
+    public String displayFormat() {
+        return "Printed Book: " + getTitle() + " by " + getAuthor() + " | Pages: " + pageCount;
+    }
+
+    @Override
+    public String toString() {
+        return "PrintedBook{" +
+                "bookID='" + getBookID() + '\'' +
+                ", title='" + getTitle() + '\'' +
+                ", author='" + getAuthor() + '\'' +
+                ", price=" + getPrice() +
+                ", pageCount=" + pageCount +
+                '}';
+    }
 }

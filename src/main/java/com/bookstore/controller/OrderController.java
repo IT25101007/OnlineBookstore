@@ -2,10 +2,9 @@ package com.bookstore.controller;
 
 import com.bookstore.filehandler.OrderFileHandler;
 import com.bookstore.filehandler.BookFileHandler;
-import com.bookstore.filehandler.CartFileHandler;
+import com.bookstore.filehandler.BookInventoryFileHandler;
 import com.bookstore.model.Order;
 import com.bookstore.model.Book;
-import com.bookstore.model.Cart;
 import com.bookstore.model.User;
 import com.bookstore.util.IDGenerator;
 import jakarta.servlet.http.HttpSession;
@@ -44,7 +43,7 @@ public class OrderController {
         } else {
             orders = OrderFileHandler.getOrdersByUserID(user.getUserID(), ordersPath);
         }
-
+        // Newest orders first
         java.util.Collections.reverse(orders);
 
         model.addAttribute("orders", orders);
@@ -70,7 +69,7 @@ public class OrderController {
         String booksPath = getDataPath("books.txt");
         String cartPath = getDataPath("cart.txt");
 
-
+        // Get all cart items for the user
         List<com.bookstore.model.Cart> cartItems = com.bookstore.filehandler.CartFileHandler.getCartByUserID(user.getUserID(), cartPath);
         if (cartItems == null || cartItems.isEmpty()) {
             return "redirect:/cart";
@@ -79,15 +78,14 @@ public class OrderController {
         String lastOrderID = null;
         for (com.bookstore.model.Cart cartItem : cartItems) {
             Book book = BookFileHandler.getBookByID(cartItem.getBookID(), booksPath);
-            if (book == null || book.getStock() < cartItem.getQuantity()) continue;
+            if (book == null || !BookInventoryFileHandler.hasEnoughStock(cartItem.getBookID(), cartItem.getQuantity(), booksPath)) continue;
 
             double totalAmount = book.getPrice() * cartItem.getQuantity();
             String orderID = IDGenerator.generateOrderID();
             Order order = new Order(orderID, user.getUserID(), cartItem.getBookID(), cartItem.getQuantity(), totalAmount, "PENDING");
             OrderFileHandler.addOrder(order, ordersPath);
 
-            int newStock = book.getStock() - cartItem.getQuantity();
-            BookFileHandler.updateStock(cartItem.getBookID(), newStock, booksPath);
+            BookInventoryFileHandler.reduceStock(cartItem.getBookID(), cartItem.getQuantity(), booksPath);
             lastOrderID = orderID;
         }
 
@@ -125,4 +123,3 @@ public class OrderController {
         return "redirect:/orders";
     }
 }
-// updated

@@ -1,35 +1,33 @@
 package com.bookstore.model;
 
-public class User {
+public class Admin {
     // Encapsulated fields
-    private String userID;
+    private String adminID;
     private String name;
     private String email;
     private String password;
-    private String phone;
-    private String role;
+    private String role; // SUPER_ADMIN, REPORT_ADMIN, etc.
 
     // No-args constructor
-    public User() {
+    public Admin() {
     }
 
     // Full constructor
-    public User(String userID, String name, String email, String password, String phone, String role) {
-        this.userID = userID;
+    public Admin(String adminID, String name, String email, String password, String role) {
+        this.adminID = adminID;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.phone = phone;
         this.role = role;
     }
 
     // Getters and Setters
-    public String getUserID() {
-        return userID;
+    public String getAdminID() {
+        return adminID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setAdminID(String adminID) {
+        this.adminID = adminID;
     }
 
     public String getName() {
@@ -56,14 +54,6 @@ public class User {
         this.password = password;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getRole() {
         return role;
     }
@@ -72,33 +62,27 @@ public class User {
         this.role = role;
     }
 
-    // Convert to file string format: userID | name | email | password | phone | role
+    // Convert to file string
     public String toFileString() {
-        return userID + " | " + name + " | " + email + " | " + password + " | " + phone + " | " + role;
+        return adminID + " | " + name + " | " + email + " | " + password + " | " + role;
     }
 
     // Parse from file string
-    public static User fromFileString(String line) {
+    public static Admin fromFileString(String line) {
         String[] parts = line.split(" \\| ");
-        if (parts.length == 6) {
-            return new User(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+        if (parts.length == 5) {
+            return new Admin(parts[0], parts[1], parts[2], parts[3], parts[4]);
         }
         return null;
     }
 
-    // Display info - to be overridden by subclasses (polymorphism)
-    public void displayInfo() {
-        System.out.println("User: " + name + " | Email: " + email);
-    }
-
     @Override
     public String toString() {
-        return "User{" +
-                "userID='" + userID + '\'' +
+        return "Admin{" +
+                "adminID='" + adminID + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", role='" + role + '\'' +
                 '}';
     }
 }
-//Updated

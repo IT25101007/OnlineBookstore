@@ -1,18 +1,19 @@
 package com.bookstore.model;
 
 public class Order {
+
     private String orderID;
     private String userID;
     private String bookID;
     private int quantity;
     private double totalAmount;
-    private String status; // PENDING, CONFIRMED, CANCELLED, DELIVERED
+    private String status;
 
-    // No-args constructor
+
     public Order() {
     }
 
-    // Full constructor
+
     public Order(String orderID, String userID, String bookID, int quantity, double totalAmount, String status) {
         this.orderID = orderID;
         this.userID = userID;
@@ -22,7 +23,7 @@ public class Order {
         this.status = status;
     }
 
-    // Getters and Setters
+
     public String getOrderID() {
         return orderID;
     }
@@ -71,13 +72,12 @@ public class Order {
         this.status = status;
     }
 
-    // Convert to file string
-    // Note: Order uses Aggregation (an Order references a Book via bookID)
+
     public String toFileString() {
         return orderID + " | " + userID + " | " + bookID + " | " + quantity + " | " + totalAmount + " | " + status;
     }
 
-    // Parse from file string
+
     public static Order fromFileString(String line) {
         String[] parts = line.split(" \\| ");
         if (parts.length == 6) {
@@ -100,5 +100,5 @@ public class Order {
                 ", status='" + status + '\'' +
                 '}';
     }
-
 }
+// updated

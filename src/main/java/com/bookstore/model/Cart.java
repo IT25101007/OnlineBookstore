@@ -7,8 +7,10 @@ public class Cart {
     private String bookID;
     private int quantity;
 
+
     public Cart() {
     }
+
 
     public Cart(String cartID, String userID, String bookID, int quantity) {
         this.cartID = cartID;
@@ -17,4 +19,62 @@ public class Cart {
         this.quantity = quantity;
     }
 
+
+    public String getCartID() {
+        return cartID;
+    }
+
+    public void setCartID(String cartID) {
+        this.cartID = cartID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getBookID() {
+        return bookID;
+    }
+
+    public void setBookID(String bookID) {
+        this.bookID = bookID;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+
+
+    public String toFileString() {
+        return cartID + " | " + userID + " | " + bookID + " | " + quantity;
+    }
+
+
+    public static Cart fromFileString(String line) {
+        String[] parts = line.split(" \\| ");
+        if (parts.length == 4) {
+            return new Cart(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]));
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "cartID='" + cartID + '\'' +
+                ", userID='" + userID + '\'' +
+                ", bookID='" + bookID + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
+// updated
